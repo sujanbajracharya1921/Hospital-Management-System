@@ -1,0 +1,31 @@
+{% extends 'master/master.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<br>
+<section class="page-content">
+  <div class="container">
+  <div class="col-md-4">
+  <h1>Add Patient Form</h1>
+
+  </div>
+  <div class="col-md-8">
+    {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+   {% endif %} 
+  <form method='POST' action="{% url 'recep_patient_form' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+
+
+    <button type='submit' class="btn btn-primary">Save</button>
+  </form>
+  </div>
+  </div>
+  </section>
+  <br>
+{% endblock %}
+{% block title%} Add Patient Form {% endblock %}

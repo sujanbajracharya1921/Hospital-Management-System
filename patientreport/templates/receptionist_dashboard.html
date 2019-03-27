@@ -1,0 +1,102 @@
+
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+	<h2 class="text-center heading">Receptionist Dashboard</h2>
+</div>
+<div class="container-fluid body-section">
+    <div class="row">
+        <div class="col-md-2 dashboards">
+           	<div class="list-group">
+              	<a href="" class="list-group-item active">
+									{% if user.is_authenticated %}
+									<p style="float:left;padding-top:5px;font-size:10px;color:black;">Welcome, {{ user.get_username }}.</p>
+									{% endif %}
+									My Accounts
+              	</a>
+                <a href="{% url 'recep_patient_form' %}" class="list-group-item">
+                   Add Patients
+                </a>
+
+              	<a href="{% url 'updatereceptionist' %}" class="list-group-item">
+                	Edit  Profile
+              	</a>
+								<a href="{% url 'updatereceptionist_pass' %}" class="list-group-item">
+									Change Password
+								</a>
+              	<a href="{% url 'logout' %}" class="list-group-item">
+                	Log Out
+              	</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+					<form class='form' method="GET"  action="{% url 'recep_patient_update_form' %}"  style="margin-top:25px;">
+						<div class="col-md-3 col-sm-offset-8">
+					    <div class="input-group recep-search">
+								<input class='form-control' type="text" name='q' placeholder="search by Patient's ID" value="{{request.GET.q}}" >
+					      <span class="input-group-btn">
+					        <input class="btn btn-success" type="submit" value="search">
+					      </span>
+					    </div><!-- /input-group -->
+					  </div><!-- /.col-lg-6 -->
+
+					</form>
+					 <style>
+ 					  ul{
+ 					    list-style:None;
+ 					    list-display:None;
+ 					  }
+ 					  table {
+ 					    border-collapse: collapse;
+ 					    width: 100%;
+ 					  }
+
+ 					  th, td {
+ 					    text-align: center;
+ 					    padding: 8px;
+ 					  }
+
+ 					  tr:nth-child(even){background-color: #f2f2f2}
+
+ 					  th {
+ 					    background-color: #4CAF50;
+ 					    color: white;
+ 					  }
+
+ 					  h2{
+ 					    text-align:center;
+ 					  }
+ 					</style>
+					 <table style="width:100%">
+
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Sex</th>
+							<th>Age</th>
+							<th>Address</th>
+							<th>Contact</th>
+							<th>Date</th>
+							<th>User</th>
+						</tr>
+
+						<tr>
+							{% for x in pats %}
+							<td>{{x.id}}</td>
+							<td>{{x.name}}</td>
+							<td>{{x.sex}}</td>
+							<td>{{x.age}}</td>
+							<td>{{x.address}}</td>
+							<td>{{x.contact}}</td>
+							<td>{{x.date}}</td>
+							<td>{{x.receptionist}}</td>
+						</tr>
+
+							{% endfor %}
+
+					 </table>
+					 </div>
+					 <hr>
+
+{% endblock %}

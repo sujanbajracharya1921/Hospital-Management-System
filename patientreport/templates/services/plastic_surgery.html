@@ -1,0 +1,23 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+
+
+<img src="{% static 'image/plastic-surgery-services.jpg' %}" alt="..." width="100%" height="400px">
+
+<div class="container" style="margin-top:50px;margin-bottom:50px;">
+  <div class="thumbnail" style="padding-left:50px;padding-bottom:30px;">
+    <h2><b>Plastic Surgery</b></h2>
+    <p>The department of Plastic Surgery at Norvic International Hospital endeavors to give you an aesthetically pleasing persona. Dedicated, qualified and experienced, cosmetologists and plastic surgeons give unmatched expertise in aesthetics to boost your personality and correct defects. Be it inborn deformations, harm to body parts, nerve wounds, reconstruction of parts after surgery or post burn deformities, our expert cosmetic and plastic surgeons are well equipped to offer noteworthy results.
+
+Our specialists excel in treating issues relating to skin, hair, and nails. The department also offers numerous procedures in the field of dermatologic surgery, including laser surgery, chemical peels, soft tissue augmentation, hair transplant, liposuction Botox injections, and micrographic surgery. The department uses minimally-invasive techniques in facial cosmetic procedures, facelift, short scar and neck lift.</p>
+    <h4><b>Checkup-Days:Monday-Wednesday</b></h4>
+    <h4><b>Checkup-Time:12:30-4:30</b></h4>
+  </div>
+  </div>
+
+
+  {% endblock %}
+  {% block title%}Doctor Hospital | Live Life Healthy{% endblock %}

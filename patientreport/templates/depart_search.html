@@ -1,0 +1,80 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'partials/header.html' %}
+
+     <section class="page-heading">
+       <div class="container">
+           <div class="thumbnail" style="margin-top:30px;">
+             <h1 style="text-align:center">Doctors</h1>
+           </div>
+       </div>
+     </section>
+     <!-- Page Heading / End -->
+
+     <!-- Page Content -->
+     <section class="page-content">
+       <div class="container">
+
+
+       </div>
+     </section>
+
+     <!-- Page Content / End -->
+
+     <div>
+       {% if messages %}
+       <ul class="messages">
+         {% for k in messages %}
+         <li style="color:red">{{k}}</li>
+         {% endfor %}
+       </ul>
+       {% endif %}
+     </div><br>
+
+     <div class="container"style="color:blue">
+
+       {% if sr %}
+           {% for k in sr %}
+
+           <style>
+             table {
+               border-collapse: collapse;
+               width: 100%;
+             }
+
+             th, td {
+               text-align: left;
+               padding: 8px;
+             }
+
+             tr:nth-child(even){background-color: #f2f2f2}
+
+             th {
+               background-color: #4CAF50;
+               color: white;
+             }
+
+           </style>
+
+
+        {% if k.doctor.image %}
+        <img src="{{k.doctor.image.url}}" class="img-thumbnail" alt="" width="304" height="236">
+        {% endif %}
+        <br><br>
+        Name:{{k.doctor.user.name}}
+        <br>
+        Email:{{k.doctor.user.email}}
+        <br>
+
+        Degree:{{k.doctor.degree}}
+        <br>
+        Specialist:{{k.doctor.specialist}}
+
+       <hr>
+       {% endfor %}
+       {% endif %}
+
+
+     </div>
+     {% endblock %}

@@ -1,0 +1,94 @@
+
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="rectangle">
+  <h2 class="text-center heading">Lab Bill Form</h2>
+</div>
+<div class="container-fluid body-section">
+  <div class="row">
+    <div class="col-md-2 dashboard3s">
+      <div class="list-group">
+        <a href="{% url 'profile' %}" class="list-group-item active">
+          <span class="badge"></span>
+          My Accounts
+        </a>
+
+        <a href="{% url 'lab_check_pats_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Patient's Result
+        </a>
+
+        <a href="{% url 'lab_check_pats_bill_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Patient's Bill
+        </a>
+
+        <a href="{% url 'updatelab' %}" class="list-group-item">
+          Edit Profile
+        </a>
+
+        <a href="{% url 'updatelab_pass' %}" class="list-group-item">
+          Change Password
+        </a>
+        <a href="{% url 'logout' %}" class="list-group-item">
+          Log Out
+        </a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <section class="page-content">
+        <div class="col-md-4">
+
+          <h1>Patient Detail</h1>
+
+          <div class="thumbnail">
+            <ul>
+              <li><h4>ID:  {{pats.id}}</h4></li>
+              <li><h4>Name:  {{pats.name}}</h4></li>
+              <li><h4>Age:  {{pats.age}}</h4></li>
+              <li><h4>Sex:  {{pats.sex}}</h4></li>
+              <li><h4>Address:  {{pats.address}}</h4></li>
+              <li><h4>Contact:  {{pats.contact}}</h4></li>
+              <li><h4>Date:  {{pats.date}}</h4></li>
+              <li><h4>User:  {{pats.receptionist}}</h4></li>
+            </ul>
+          </div>
+          <br>
+          <h4>Lab Test recommended</h4>
+          {% for x in tests %}
+          <div class="thumbnail">
+            <h5>Lab test name : {{x.lab}}</h5>
+            <h5>comments : {{x.comments}}</h5>
+            <h5>doctor: {{x.doctor}}</h5>
+            <h5>doctor: {{x.date}}</h5>
+
+          </div>
+          {% endfor %}
+
+          <style>
+            ul{
+              list-style:None;
+            }
+            .btn{
+              float:left;
+            }
+          </style>
+
+        </div>
+        <br>
+        <br><br>
+        <div class="col-md-4 col-sm-offset-1">
+          <br>
+          <form method='POST' action="{% url 'lab_test_bill' pats.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button type='submit' class="btn btn-primary">save</button>
+          </form>
+        </div>
+      </section>
+
+      {% endblock %}
+      {% block title%} Hospital | Lab Bill Form {% endblock %}

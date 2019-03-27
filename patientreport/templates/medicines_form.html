@@ -1,0 +1,124 @@
+
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="rectangle">
+	<h2 class="text-center heading">Medical Form</h2>
+</div>
+<!-- <div class="container-fluid body-section"> -->
+	<div class="row contains">
+		<div class="col-md-2 dashboard3s">
+			<div class="list-group">
+				<a href="{% url 'profile' %}" class="list-group-item active">
+					My Accounts
+				</a>
+
+				<a href="{% url 'meds_check_pats_list' %}" class="list-group-item">
+					Patients
+				</a>
+				<a href="{% url 'updatemedical' %}" class="list-group-item">
+					Edit  Profile
+				</a>
+				<a href="{% url 'updatemedical_pass' %}" class="list-group-item">
+					<span class="badge">12</span>
+					Change Password
+				</a>
+				<a href="{% url 'logout' %}" class="list-group-item">
+					Log Out
+				</a>
+			</div>
+		</div>
+		<div class="col-md-10">
+				<div class="col-md-4">
+
+					<h3><B>Patient Report</B></h3>
+
+					<ul>
+						<li><h5>ID:  {{pats.id}}</h5></li>
+						<li><h5>Name:  {{pats.name}}</h5></li>
+						<li><h5>Age:  {{pats.age}}</h5></li>
+						<li><h5>Sex:  {{pats.sex}}</h5></li>
+						<li><h5>Address:  {{pats.address}}</h5></li>
+						<li><h5>Contact:  {{pats.contact}}</h5></li>
+						<li><h5>Date:  {{pats.date}}</h5></li>
+						<li><h5>User:  {{pats.receptionist}}</h5></li>
+					</ul>
+
+					<br>
+					<style>
+						ul{
+							list-style:None;
+						}
+						table,th,td{
+							border: 1px solid black;
+							text-align:center;
+						}
+
+
+					</style>
+
+					<h4><U><B>Medicine's recommended</B></U></h4>
+
+					<table style="width:100%">
+
+						<tr>
+
+							<th>Medicines</th>
+							<th>Comments</th>
+							<th>Doctor</th>
+							<th>Date</th>
+						</tr>
+
+						<tr>
+							{% for x in doc_med %}
+
+							<td>{{x.medicines}}</td>
+							<td>{{x.comments}}</td>
+							<td>{{x.doctor}}</td>
+							<td>{{x.date}}</td>
+
+						</tr>
+						{% endfor %}
+					</table>
+
+				</div>
+
+
+				<div class="col-md-4 col-md-offset-2">
+					<br>
+
+					<form id='medical_form' method='POST' action="{% url 'medicines' pats.id %}" enctype="multipart/form-data">
+						{% csrf_token %}
+						<!-- <ul>
+						{% for a in all_med %}
+						{% if a.patient_id ==  pats.id %}
+
+						<li> <input id={{a.id}} type="checkbox" value={{a.medicines}}><strong> {{a.medicines}} </<strong></li>
+						{% endif %}
+						{% endfor %}
+					</ul> -->
+					<h4><b>Medicines:</b></h4>
+					{% for x in doc1 %}
+					<ul><input class="selection-box" name="medicines" type="checkbox" value={{x.medicines}}><strong> {{x.medicines}} </<strong></ul>
+
+					{% endfor %}
+				<h4><b>Amount:</b></h4>{{form.amount}}
+
+				<br>
+					<h4><b>Purchase-Date:</b></h4>{{form.p_date}}
+
+					<br><br>
+
+					<button type='submit' class="btn btn-primary">save</button>
+				</form>
+
+</div>
+</div>
+</div>
+<hr>
+
+{% endblock %}
+{% block title%} Medical Form {% endblock %}

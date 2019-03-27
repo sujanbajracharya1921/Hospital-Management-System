@@ -1,0 +1,61 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Dialog - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#some_flag" ).dialog();
+    } );
+  </script>
+</head>
+<body>
+  <div id="some_flag" title="Delete">
+    <p>Are you sure want to delete this user?</p>
+
+    <a href="{% url 'profile' %}">NO</a>
+    <a href="{% url 'delete_users' ash.id %}" alt="delete">YES</a>
+
+  </div>
+
+</body>
+</html>
+
+
+<!-- <html>
+<head>
+<script type="text/javascript">
+$(document).ready(function() {
+$(function() {
+$( "#some_flag" ).dialog({
+modal: true,
+closeOnEscape: false,
+dialogClass: "no-close",
+resizable: false,
+draggable: false,
+width: 600,
+buttons: [
+{
+text: "OK",
+click: function() {
+$( this ).dialog( "close" );
+}
+}
+]
+});
+});
+});
+</script>
+</head>
+{% if some_flag %}
+<div id="some_flag" title="Some Flag">
+<p>Some Text Here</p>
+</div>
+{% endif %}
+</html --> -->

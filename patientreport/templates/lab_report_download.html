@@ -1,0 +1,85 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'partials/header.html' %}
+
+<div class="col-md-8 col-sm-offset-2" style="margin-top:50px;">
+<div class="thumbnail hundred">
+<h2 style="color:#E74C3C;">Download Lab Report</h2><hr>
+<form class='form' method="GET"  action="{% url 'lab_report_download' %}"  style="margin-top:25px;">
+	<div class="col-md-8 col-sm-offset-2">
+    <div class="input-group">
+			<input class='form-control lab-report' type="text" name='q' placeholder="Enter your ID" value="{{request.GET.q}}" >
+      <span class="input-group-btn">
+        <input class="btn btn-success" type="submit" value="search">
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+</form>
+</div>
+</div>
+
+<style>
+  ul{
+    list-style:None;
+    list-display:None;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2}
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  h2{
+    text-align:center;
+  }
+</style>
+
+{% if labt %}
+<div class="container">
+
+<table style="width:100%">
+
+ <tr>
+   <th>Tests</th>
+   <th>Result</th>
+   <th>Test-Date</th>
+	 <th>Patient-ID</th>
+
+
+
+ </tr>
+
+    <tr>
+      {% for labt in labt %}
+   <td>{{labt.test_name}}</td>
+   <td><a href="{% url 'lab_result_pdf' labt.patient.id %}">Download</a></td>
+   <td>{{labt.test_date}}</td>
+	 <td>{{labt.patient.id}}</td>
+
+
+   </tr>
+   {% endfor %}
+
+	 {% else %}
+	 <div class='jumborton' style="padding-top:250px;">  <h3 class="text-info" style="text-align:center">No Report to show</h3></div>
+	 {% endif %}
+ </table>
+ </div>
+
+
+
+
+{% endblock %}

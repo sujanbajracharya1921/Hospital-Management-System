@@ -1,0 +1,87 @@
+{% extends 'master/master.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<section class="page-content">
+  <h1><B>Doctor's Hospital</B></h1>
+  <h5>Kathmandu,Nepal</h5>
+  <h5>01-51545,01-5646445.01-5412158</h5>
+
+  <div class="container">
+  <div class="col-md-4">
+    <style>
+      ul{
+        list-style:None;
+        list-display:None;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even){background-color: #f2f2f2}
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      h2{
+        text-align:center;
+      }
+    </style>
+    <hr>
+
+    <h2><B>Test Report</B></h2>
+    <hr>
+
+    <ul>
+      <li><h7>ID:  {{labt.patient.id}}</h7></li>
+      <li><h7>Name:  {{labt.patient.name}}</h7></li>
+      <li><h7>Age:  {{labt.patient.age}}</h7></li>
+      <li><h7>Sex:  {{labt.patient.sex}}</h7></li>
+      <li><h7>Address:  {{labt.patient.address}}</h7></li>
+      <li><h7>Contact:  {{labt.patient.contact}}</h7></li>
+      <li><h7>Date:  {{labt.patient.date}}</h7></li>
+      <li><h7>User:  {{labt.patient.receptionist}}</h7></li>
+    </ul>
+
+    </div>
+
+
+  <div class="col-md-8">
+    <br>
+
+    <h4><U><B>Lab Test Bill</B></U></h4>
+
+    <table style="width:100%">
+
+     <tr>
+       <th>Tests</th>
+       <th>Result</th>
+       <th>Test-Date</th>
+
+
+     </tr>
+
+        <tr>
+       <td>{{labt.test_name}}</td>
+       <td>{{labt.result}}</td>
+       <td>{{labt.test_date}}</td>
+
+       </tr>
+
+
+    </table>
+
+  </div>
+  </div>
+  </section>
+  <br>
+{% endblock %}
+{% block title%} Lab-Test Result Report {% endblock %}

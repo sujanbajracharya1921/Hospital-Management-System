@@ -1,0 +1,48 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'partials/header.html' %}
+
+     <section class="page-heading">
+       <div class="container" style="margin-top:30px;">
+         <div class="thumbnail">
+             <h1 style="text-align:center"> Search Doctors</h1>
+           </div>
+         </div>
+     </section>
+     <!-- Page Heading / End -->
+
+     <!-- Page Content -->
+     <section class="page-content">
+       <div class="container">
+
+       <ul class="nav navbar-nav doc-search">
+               <!-- <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Department <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                   <li><a href=""> <span class="badge">14</span>ENT</a></li>
+                   <li><a href="#"> <span class="badge">14</span>OPD</a></li>
+                   <li><a href="#"> <span class="badge">14</span>Operation</a></li>
+                   <li role="separator" class="divider"></li>
+                   <li><a href="#"> <span class="badge">14</span>Skin</a></li>
+                   <li role="separator" class="divider"></li>
+                   <li><a href="#"> <span class="badge">14</span>Heart</a></li>
+                 </ul>
+               </li> -->
+             </ul>
+             <form id="department_doctor" class="navbar-form navbar-left" style="padding-left:350px;padding-top:50px;" name="srh" action="{% url 'depart_search' %}" method="POST">
+               {% csrf_token %}
+               {{form.department}}
+               {% for x in doc1 %}
+     					<!-- <ul><input type='hidden' class="selection-box" name="doctor"  value={{x.doctor}}><strong> {{x.doctor}} </<strong></ul> -->
+
+     					{% endfor %}
+               <div class="form-group">
+                 <input type="text" name="srh" class="form-control" placeholder="Search for Doctors">
+               </div>
+               <button type="submit" class="btn btn-success">Search</button>
+             </form>
+             </div>
+
+     </section>
+     {% endblock %}

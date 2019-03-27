@@ -1,0 +1,28 @@
+{% extends 'master/master.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<br>
+<section class="page-content">
+  <div class="container">
+  <div class="col-md-4">
+  <h1>Update Receptionist Profile</h1>
+  <!-- class="img-circle" -->
+  {% if x.image %}
+  <img src="{{x.image.url}}" class="img-thumbnail" alt="" width="304" height="236">
+{% endif %}
+  </div>
+  <div class="col-md-8">
+  <form method='POST' action="{% url 'updatereceptionist' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form2.as_p}}
+    {{form.as_p}}
+
+
+    <button type='submit' class="btn btn-primary">update</button>
+  </form>
+  </div>
+  </div>
+  </section>
+  <br>
+{% endblock %}
+{% block title%} Update Profile {% endblock %}

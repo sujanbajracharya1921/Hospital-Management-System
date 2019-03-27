@@ -1,0 +1,91 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="rectangle">
+  <h2 class="text-center heading">Medicine CheckUp List</h2>
+</div>
+<div class="container-fluid body-section">
+  <div class="row">
+    <div class="col-md-2 dashboard3s">
+      <div class="list-group">
+        <a href="{% url 'profile' %}" class="list-group-item active">
+          <span class="badge"></span>
+          My Accounts
+        </a>
+
+        <a href="{% url 'doc_check_pats_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Medicine Checkup
+        </a>
+
+        <a href="{% url 'doc_check_lab_pats_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Lab Checkup
+        </a>
+
+        <a href="{% url 'updatedoctor' %}" class="list-group-item">
+          Edit Profile
+        </a>
+
+        <a href="{% url 'updatedoctor_pass' %}" class="list-group-item">
+          Change Password
+        </a>
+        <a href="{% url 'logout' %}" class="list-group-item">
+          Log Out
+        </a>
+      </div>
+    </div>
+    <div class="col-md-10">
+
+      <div style="background-color:#ccc;margin-top:10px;padding-top:10px; padding-bottom:20px;padding-left:5px;padding-right:5px;text-align:center;">
+        <h1>Patient's List</h1></div>
+        <br>
+        <style>
+          table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+
+          tr:nth-child(even){background-color: #f2f2f2}
+
+          th {
+            background-color: #4CAF50;
+            color: white;
+          }
+          }
+
+        </style>
+        <table style="width:100%">
+
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Medicines</th>
+            <th>Comments</th>
+            <th>Date</th>
+            <th>ID</th>
+          </tr>
+
+
+          <tr>
+
+            {% for doct in doct %}
+            <td>{{ doct.patient.name }}</td>
+            <td>{{ doct.patient.contact }}</td>
+            <td>{{ doct.medicines }}</td>
+            <td>{{ doct.comments }}</td>
+            <td>{{doct.patient.date}}</td>
+            <td>{{ doct.patient.id }}</td>
+
+          </tr>
+          {% endfor %}
+        </table>
+        </div>
+        <br>
+        {% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+	<h2 class="text-center heading">Medicine Form</h2>
+</div>
+<div class="container-fluid body-section">
+	<div class="row">
+		<div class="col-md-2 dashboard3s">
+			<div class="list-group">
+				<a href="{% url 'profile' %}" class="list-group-item active">
+					<span class="badge"></span>
+					My Accounts
+				</a>
+
+				<a href="{% url 'doc_check_pats_list' %}" class="list-group-item">
+					<span class="badge">12</span>
+					Medicine Checkup
+				</a>
+
+				<a href="{% url 'doc_check_lab_pats_list' %}" class="list-group-item">
+					<span class="badge">12</span>
+					Lab Checkup
+				</a>
+
+				<a href="#" class="list-group-item">
+					<span class="badge">12</span>
+					Appointments
+				</a>
+				<a href="{% url 'updatedoctor' %}" class="list-group-item">
+					Edit  Profile
+				</a>
+				<a href="{% url 'updatedoctor_pass' %}" class="list-group-item">
+					Change Password
+				</a>
+				<a href="{% url 'logout' %}" class="list-group-item">
+					Log Out
+				</a>
+			</div>
+		</div>
+		<div class="col-md-10">
+
+			<div class="col-md-3">
+				<h1>Patient Detail</h1>
+				<ul>
+					<li><h4>ID:  {{pats.id}}</h4></li>
+					<li><h4>Name:  {{pats.name}}</h4></li>
+					<li><h4>Address:  {{pats.address}}</h4></li>
+					<li><h4>Age:  {{pats.age}}</h4></li>
+					<li><h4>Sex:  {{pats.sex}}</h4></li>
+					<li><h4>Contact:  {{pats.contact}}</h4></li>
+
+
+				</ul>
+
+				<style>
+					ul{
+						list-style:None;
+					}
+				</style>
+
+			</div>
+
+			<div class="col-md-7">
+
+				<br><br>
+				<form method='POST' action="{% url 'doc_med_form' pats.id %}" enctype="multipart/form-data">
+					{% csrf_token %}
+					{{form.as_p}}
+
+
+					<button type='submit' class="btn btn-primary">save</button>
+				</form>
+			</div>
+		</div>
+		<br>
+		{% endblock %}
+		{% block title%} Patient Medicine Form {% endblock %}

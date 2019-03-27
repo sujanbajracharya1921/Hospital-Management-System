@@ -1,0 +1,26 @@
+{% extends 'master/master.html' %}
+{% block content %}
+<style>
+.thumbnail{
+  margin-left:300px;
+  margin-top:80px;
+}
+li{
+  list-style:none;
+}
+.depart{
+  padding-left:80px;
+}
+</style>
+<h1 align="center">Department Form</h1>
+<div class="thumbnail col-md-6">
+<form method="post" action="{% url 'department' %} " class="depart" enctype="multipart/form-data">
+{% csrf_token %}
+{{form.as_p}}
+
+<button type="submit" class="btn btn-success">Save</button>
+</form>
+
+</div>
+
+{% endblock %}

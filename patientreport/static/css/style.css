@@ -1,0 +1,485 @@
+.nav1{
+  height:100px;
+  margin-top:0px;
+  border:none;
+  border-width: 0px;
+  margin: 0px;
+
+
+}
+.logo{
+  height:50px;
+
+}
+.logodiv{
+  padding-left:20px;
+
+}
+.logodiv>a>img{
+  padding-bottom: 5px;
+}
+.links{
+  padding-top:25px;
+  padding-left:25px;
+
+}
+.firstbar{
+  margin-bottom:0px;
+  background-color: #0A467C;
+  border: none;
+  border-radius:0px;
+  padding-top: 10px;
+
+
+}
+
+
+.mainsearchbox{
+  padding-left:0px;
+  padding-right:15px;
+  width:400px;
+}
+.navnav{
+  border: none;
+  margin-bottom: 0px;
+
+}
+
+.searchbox{
+  margin-top: 7px;
+
+}
+.info>h4{
+  color: white;
+  padding-left: 80px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 1px;
+  padding-top: 5px;
+
+}
+.one{
+  padding-left: 40px;
+  padding-top: 3px;
+}
+.link2{
+padding-right:10px;
+margin-right: 0px;
+
+}
+.logoicon{
+  margin-left: 2%;
+  margin-top:50px;
+  padding-top: 50px;
+}
+#carousel-example-generic{
+  margin-top:0px;
+
+}
+.carousel-inner > .item > img{
+margin:auto;
+width:100%;
+height:550px;
+
+}
+
+.services>a>h3{
+  text-align: center;
+  padding-bottom: 20px;
+}
+.intro{
+  width:100%;
+  margin-left: 3px;
+}
+.intro>h3{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.mainpart{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+ .thumbnail > img {
+
+    display: block;
+    max-width: 100%;
+    height: 150px;
+
+}
+
+.copyright{
+  float:left;
+  margin-bottom: 0px;
+
+}
+
+
+.feedback{
+  padding-top: 30px;
+  color: white;
+
+}
+
+
+.feedback-form{
+width:500px;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+font-family: "Poppins", sans-serif;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+margin-top: 20px;
+}
+
+.hr{
+  margin-top: -100px;
+}
+.copyright{
+  padding-top:0px;
+  color: white;
+
+}
+.menu-container{
+  color: white;
+}
+
+.user-login{
+  padding-left: 0px;
+  list-style: none;
+  padding-bottom:0px;
+  padding-left: 100px;
+  padding-top:0px;
+}
+.user-login>li{
+float:left;
+display:block;
+text-align: center;
+
+
+}
+.user-login>li>a{
+  color: white;
+}
+
+.user-login>li>a>i{
+  padding-right: 5px;
+}
+.loggin{
+  list-style: none;
+  width: 400px;
+  padding-right:0px;
+}
+
+.thumbnail>h4{
+  text-align: center;
+
+}
+.thumbnail>img{
+  height:150px;
+}
+.doc-info>img{
+  height:250px;
+}
+
+.lastbar{
+  margin-bottom:0px;
+  background-color:#33373A;
+  border: none;
+  border-radius:0px;
+  padding-top: 10px;
+  height:600px;
+  line-height: 200px;
+
+}
+.pager{
+  padding-bottom: 20px;
+}
+.maps{
+  padding-left: 10px;
+  height:200px;
+  width:50%;
+}
+.google{
+  height:400px;
+  padding-left: 100px;
+}
+.user-login1{
+  padding-left: 0px;
+  list-style: none;
+  padding-bottom:0px;
+  padding-left:0px;
+  padding-top:4px;
+  width:400px;
+
+}
+
+.user-login1>li{
+float:left;
+display:block;
+width: 90px;
+text-align: center;
+
+
+}
+.user-login1>li>a{
+  color: white;
+}
+
+.user-login1>li>a>i{
+  padding-right: 5px;
+}
+
+
+
+
+.top_bar{
+	background-color: #003087;
+	padding: 5px ;
+}
+.social_icons{
+	margin-right: 5px;
+}
+.contact_info{
+	color: #fff;
+}
+.my_menu{
+	margin-top: 20px;
+}
+.my_menu .navbar-default{
+	background: none;
+	border: none;
+}
+.my_menu .navbar-default .navbar-nav .active a{
+	background-color: #003087;  /*#f26522;*/
+	color: #fff;
+}
+.my_menu .navbar-nav li a:hover{
+	background-color: #003087;
+	color: #fff;
+}
+.hospital{
+	margin-top: 30px;
+}
+.services{
+	background:#0A467C;
+	padding: 30px;
+  margin-top:50px;
+  padding-top:10px;
+
+}
+.services h3{
+	color: #fff;
+}
+.contact_box{
+	width: 550px;
+	background-color: #eeeeee;
+	margin-bottom: 20px;
+}
+
+.footer{
+	background-color: #003087;
+	margin-top: 15px;
+	padding: 15px;
+}
+.footer-text{
+	color: #fff;
+}
+
+/*admin-dashboard*/
+.rectangle{
+	height: 100px;
+	background: radial-gradient(circle, #009cde, #003087);
+	margin-bottom: 25px;
+}
+.rectangle .heading{
+	padding-top: 30px;
+}
+@media (max-width:1200px){
+	.my_menu .pull-right {
+		float: none !important;
+	}
+}
+
+.admi{
+  width:200px;
+}
+.contains{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.lab-report{
+  width:50%;
+  margin-left: 20px;
+
+}
+.form{
+  width:100%;
+  height: 60px;
+}
+.logo2{
+  margin-bottom: 70px;
+
+}
+.loginstaff{
+  margin-top:80px;
+  width:500px;
+  height:400px;
+  border-radius: 10px;
+}
+.login_pass{
+  width:80%;
+  height:50px;
+  padding-left:25px;
+}
+.login_email{
+  width:80%;
+  height: 50px;
+  padding-left:25px;
+}
+.loginform{
+  padding-left: 75px;
+}
+.login-submit{
+  width:80%;
+  height:50px;
+
+}
+#hhh{
+padding-left: 100px;
+}
+body {background-color: #E8FAFE;}
+
+.app-btn{
+  margin-bottom:50px;
+}
+hr{ border: 0; height: 1px; background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc); }
+
+.name{
+  width:80%;
+  padding-left:25px;
+}
+.address{
+  width:80%;
+  padding-left:25px;
+}
+.cell{
+  width:80%;
+  padding-left:25px;
+}
+.appointment_email{
+  width:80%;
+  padding-left:25px;
+}
+.department{
+  width:80%;
+  padding-left:25px;
+}
+.appointment_gender_choice{
+  width:80%;
+  padding-left:25px;
+}
+.appointment{
+  border-radius: 10px;
+}
+.admin_details{
+  width:700px;
+  height:300px;
+  padding-left: 40px;
+}
+.admin_details>img{
+  float:left;
+  height:250px;
+}
+.recep-search{
+  margin-top: 0px;
+}
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+
+
+.flip-card-back {
+  background-color:#E0981F;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.doc-paggination{
+  height:500px;
+}
+
+.doc-paggination>p{
+  padding-left: 20px;
+}
+.pagination-doc-info>img{
+  height:450px;
+  width: 450px;
+  margin: 20px;
+  margin-right:50px;
+}
+.pagination-doc-info>p{
+  padding-top: 60px;
+  padding-right: 35px;
+}
+.pagination{
+  padding-left: 650px;
+}
+
+.feedback-btn{
+  width:80%;
+}
+
+.depart{
+  padding-left: 50px;
+}
+.navbar-nav{
+padding-left: 200px;
+}
+
+.navbar-nav>li{
+padding-right: 30px;
+border-left: 1px solid #ccc;
+
+}
+.navbar-nav>li>a{
+  color:black !important;
+}
+.doc-search>li{
+  border: none;
+}
+.doc-input-search{
+  margin-left: 100px;
+  margin-top: 20px;
+
+}

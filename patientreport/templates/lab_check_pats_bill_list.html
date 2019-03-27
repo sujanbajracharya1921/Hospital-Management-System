@@ -1,0 +1,95 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="rectangle">
+  <h2 class="text-center heading">Lab Bill </h2>
+</div>
+<div class="container-fluid body-section">
+  <div class="row">
+    <div class="col-md-2 dashboard3s">
+      <div class="list-group">
+        <a href="{% url 'profile' %}" class="list-group-item active">
+          <span class="badge"></span>
+          My Accounts
+        </a>
+
+        <a href="{% url 'lab_check_pats_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Patient's Result
+        </a>
+
+        <a href="{% url 'lab_check_pats_bill_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Patient's Bill
+        </a>
+
+        <a href="{% url 'updatelab' %}" class="list-group-item">
+          Edit Profile
+        </a>
+
+        <a href="{% url 'updatelab_pass' %}" class="list-group-item">
+          Change Password
+        </a>
+        <a href="{% url 'logout' %}" class="list-group-item">
+          Log Out
+        </a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div style="background-color:#ccc;margin-top:10px;padding-top:10px; padding-bottom:20px;padding-left:5px;padding-right:5px;text-align:center;">
+        <h1>Patient's List</h1></div>
+        <br>
+        <style>
+          table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+
+          th, td {
+            text-align: center;
+            padding: 8px;
+          }
+
+          tr:nth-child(even){background-color: #f2f2f2}
+
+          th {
+            background-color: #4CAF50;
+            color: white;
+          }
+          }
+
+        </style>
+        <table style="width:100%">
+
+          <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Test-Name</th>
+            <th>Sample Collected</th>
+            <th>Status</th>
+            <th>Amount</th>
+            <th>Test_Date</th>
+            <th>ID</th>
+
+
+          </tr>
+
+
+          <tr>
+
+            {% for labt in labt %}
+            <td>{{ labt.patient.name }}</td>
+            <td>{{ labt.patient.contact }}</td>
+            <td>{{ labt.test_name }}</td>
+            <td>{{ labt.sample }}</td>
+            <td>{{labt.status}}</td>
+            <td>{{labt.amount}}</td>
+            <td>{{labt.test_date}}</td>
+            <td>{{ labt.patient.id }}</td>
+          </tr>
+
+
+          {% endfor %}
+        </table>
+        {% endblock %}

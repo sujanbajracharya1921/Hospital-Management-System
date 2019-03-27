@@ -1,0 +1,187 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+
+
+<img src="{% static 'image/hospital.jpg' %}" alt="..." width="100%" height="500px">
+
+<div class="container" style="margin-top:50px;margin-bottom:50px;">
+  <div class="thumbnail" style="padding-left:50px;padding-bottom:30px;">
+    <h2 align="center">Our Specialities</h2>
+  </div>
+
+  <div class="row">
+    <div class='col-xs-6 col-md-3'>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+
+    <div class="flip-card-front" >
+      <a href="#" class="thumbnail">
+        <img src="{% static 'image/pathology.jpg' %}" alt="...">
+        <h4>Pathology</h4>
+      </a>
+    </div>
+    <div class="flip-card-back">
+      <a href=""><h4>Pathology</h4></a>
+      <p>The hospital boasts of well-equipped state-of-art labs for accurate diagnostics. The Pathology Lab adheres to the protocols lined by the NABL and ISO.</p>
+      <a href="{% url 'pathology' %}">Read more</a>
+
+
+      <!-- <p>{% autoescape off %}{{ text| truncatewords:30 }}{% endautoescape %}</p> -->
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class='col-xs-6 col-md-3'>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+
+  <div class="col-xs-6 col-md-3 flip-card-front" >
+    <a href="#" class="thumbnail">
+      <img src="{% static 'image/plastic surgery.jpg' %}" alt="...">
+      <h4>Plastic Surgery</h4>
+    </a>
+  </div>
+  <div class="flip-card-back">
+    <h4>Plastic Surgery</h4>
+    <p>The department of Plastic Surgery at Hamro Hospital endeavors to give you an aesthetically pleasing personal.</p>
+    <a href="{% url 'plastic_surgery' %}">Read more</a>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class='col-xs-6 col-md-3'>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+
+  <div class="col-xs-6 col-md-3 flip-card-front" >
+    <a href="#" class="thumbnail">
+      <img src="{% static 'image/radiology.jpg' %}" alt="...">
+      <h4>Radiology</h4>
+    </a>
+  </div>
+  <div class="flip-card-back">
+    <h4>Radiology</h4>
+    <p>The Radiology Department at Hamro Hospital is equipped with the CT and MRI facility.</p>
+    <a href="{% url 'radiology' %}">Read more</a>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+  <div class='col-xs-6 col-md-3'>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+
+  <div class="col-xs-6 col-md-3 flip-card-front" >
+    <a href="#" class="thumbnail">
+      <img src="{% static 'image/urology.jpg' %}" alt="...">
+      <h4>Urology</h4>
+    </a>
+  </div>
+  <div class="flip-card-back">
+    <h4>Urology</h4>
+    <p>We offer comprehensive treatment for urological and nephrological conditions in both adults and children.</p>
+    <a href="{% url 'urology' %}">Read more</a>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+<br>
+
+  <div class="row">
+
+
+  <div class='col-xs-6 col-md-3'>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+
+  <div class="col-xs-6 col-md-3 flip-card-front" >
+    <a href="#" class="thumbnail">
+      <img src="{% static 'image/cardiology.jpg' %}" alt="...">
+      <h4>Cardiology</h4>
+    </a>
+  </div>
+  <div class="flip-card-back">
+    <h4>cardiology</h4>
+    <p>We offer comprehensive treatment for urological and nephrological conditions in both adults and children.</p>
+    <a href="{% url 'urology' %}">Read more</a>
+
+  </div>
+  </div>
+  </div>
+  </div>  <div class='col-xs-6 col-md-3'>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+
+    <div class="col-xs-6 col-md-3 flip-card-front" >
+      <a href="#" class="thumbnail">
+        <img src="{% static 'image/dermatology.jpg' %}" alt="...">
+        <h4>Dermatology</h4>
+      </a>
+    </div>
+    <div class="flip-card-back">
+      <h4>Dermatology</h4>
+      <p>We offer comprehensive treatment for urological and nephrological conditions in both adults and children.</p>
+      <a href="{% url 'urology' %}">Read more</a>
+
+    </div>
+    </div>
+    </div>
+    </div>  <div class='col-xs-6 col-md-3'>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+
+      <div class="col-xs-6 col-md-3 flip-card-front" >
+        <a href="#" class="thumbnail">
+          <img src="{% static 'image/anaesthesia.jpg' %}" alt="...">
+          <h4>Anaesthesia</h4>
+        </a>
+      </div>
+      <div class="flip-card-back">
+        <h4>Anaesthesia</h4>
+        <p>We offer comprehensive treatment for urological and nephrological conditions in both adults and children.</p>
+        <a href="{% url 'urology' %}">Read more</a>
+
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <div class='col-xs-6 col-md-3'>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+
+      <div class="col-xs-6 col-md-3 flip-card-front" >
+        <a href="#" class="thumbnail">
+          <img src="{% static 'image/eye care.jpg' %}" alt="...">
+          <h4>Eye Care</h4>
+        </a>
+      </div>
+      <div class="flip-card-back">
+        <h4>Eye Care</h4>
+        <p>We offer comprehensive treatment for urological and nephrological conditions in both adults and children.</p>
+        <a href="{% url 'urology' %}">Read more</a>
+
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+  </div>
+  </div>
+
+
+  {% endblock %}
+  {% block title%}Doctor Hospital | Live Life Healthy{% endblock %}

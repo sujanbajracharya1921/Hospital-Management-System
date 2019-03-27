@@ -1,0 +1,23 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container"><a class="navbar-brand logo2" href="{% url 'home' %}"><img src="{% static 'image/logo.jpg' %}" height="100px" style='padding-left: 100px;padding-top: 20px;padding-bottom: 5px;'></a></div>
+<hr>
+<br>
+<div class="col-md-8 col-sm-offset-2">
+<div class="thumbnail hundred">
+<h2 style="color:#E74C3C;">Update Patient Form</h2><hr>
+<form method='POST' action="" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form.as_p}}
+
+	<button type='submit' class="btn btn-primary">update</button>
+</form>
+
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+	<h2 class="text-center heading">Medical Dashboard</h2>
+</div>
+<div class="container-fluid body-section">
+    <div class="row">
+        <div class="col-md-2 dashboard3s">
+           	<div class="list-group">
+              	<a href="" class="list-group-item active">
+									{% if user.is_authenticated %}
+									<p style="float:left;padding-top:5px;font-size:10px;color:black;">Welcome, {{ user.get_username }}.</p>
+									{% endif %}
+									My Accounts
+              	</a>
+
+              	<a href="{% url 'meds_check_pats_list' %}" class="list-group-item">
+                	Patients
+              	</a>
+              	<a href="{% url 'updatemedical' %}" class="list-group-item">
+                	Edit  Profile
+              	</a>
+								<a href="{% url 'updatemedical_pass' %}" class="list-group-item">
+                	<span class="badge">12</span>
+                	Change Password
+              	</a>
+              	<a href="{% url 'logout' %}" class="list-group-item">
+                	Log Out
+              	</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+					<div class="row">
+           <div class="col-md-8 h1"<h1>Dashboard </h1></div>
+					 <div class=" col-md-4 input-group">
+						 <h4>Enter Patient's ID </h4>
+						<form action="{% url 'medical_patient_search' %}" method="POST" role="form">
+							 {% csrf_token %}
+										<div class="form-group admi" >
+											<input type="text" name="srh" class="form-control"  placeholder="Enter Patient's Id or Name">
+											<!-- #value="{{request.GET.srh}}" -->
+										</div>
+										<!-- <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i></button> -->
+										<span class="input-group-btn butt">
+								 			<button class="btn btn-default" type="search">Go!</button>
+								 		</span>
+
+							</form>
+				 	</div>
+
+
+
+					</div>
+					 <hr>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

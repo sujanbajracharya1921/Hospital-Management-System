@@ -1,0 +1,86 @@
+
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+	<h2 class="text-center heading">Patient List</h2>
+</div>
+<div class="container-fluid body-section">
+	<div class="row">
+		<div class="col-md-2 dashboard3s">
+			<div class="list-group">
+				<a href="{% url 'profile' %}" class="list-group-item active">
+					<span class="badge"></span>
+					My Accounts
+				</a>
+
+				<a href="{% url 'meds_check_pats_list' %}" class="list-group-item">
+					Patients
+				</a>
+				<a href="{% url 'updatemedical' %}" class="list-group-item">
+					Edit  Profile
+				</a>
+				<a href="{% url 'updatemedical_pass' %}" class="list-group-item">
+					<span class="badge">12</span>
+					Change Password
+				</a>
+				<a href="{% url 'logout' %}" class="list-group-item">
+					Log Out
+				</a>
+			</div>
+		</div>
+		<div class="col-md-10">
+			<div class="row">
+				<!-- <div style="background-color:#ccc;margin-top:10px;padding-top:10px; padding-bottom:20px;padding-left:5px;padding-right:5px;text-align:center;">
+					<h1>Patient's List</h1></div> -->
+					
+					<style>
+						table {
+							border-collapse: collapse;
+							width: 100%;
+						}
+
+						th, td {
+							text-align: left;
+							padding: 8px;
+						}
+
+						tr:nth-child(even){background-color: #f2f2f2}
+
+						th {
+							background-color: #4CAF50;
+							color: white;
+						}
+
+					</style>
+					<table style="width:99%">
+
+						<tr>
+							<th>Name</th>
+							<th>Age</th>
+							<th>Contact</th>
+							<th>Medicines</th>
+							<th>Amount</th>
+							<th>Purchase Date</th>
+							<th>ID</th>
+
+						</tr>
+
+						<tr>
+							{% for x in medit %}
+							<td>{{x.patient.name}}</td>
+							<td>{{x.patient.age}}</td>
+							<td>{{x.patient.contact}}</td>
+							<td>{{x.medicines}}</td>
+							<td>{{x.amount}}</td>
+							<td>{{x.p_date}}</td>
+							<td>{{x.patient.id}}</td>
+
+						</tr>
+						{% endfor %}
+					</table>
+					<hr>
+
+					<br>
+
+					{% endblock %}

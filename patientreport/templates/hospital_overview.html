@@ -1,0 +1,55 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+
+
+<img src="{% static 'image/hospital_overview.jpg' %}" alt="..." width="100%" height="500px">
+<div class="container">
+  <div class="thumbnail" align="justify" style="margin-top:30px;padding:30px;">
+
+
+    <img src="{% static 'image/emergency.png' %}">
+
+    <h1>Hospital Overview</h1>
+    <p>Greenwich Hospital is a 206-bed regional medical center serving Fairfield County, Connecticut and Westchester County, New York. It is a major academic affiliate of Yale School of Medicine and a member of Yale New Haven Health.
+
+      Since opening in 1903, Greenwich Hospital has evolved into a progressive medical center and teaching institution with an internal medicine residency.
+
+      We represent all medical specialties and offer a wide range of medical, surgical, diagnostic and wellness programs. High quality care, coupled with Greenwich Hospital’s convenient location, are reasons many patients choose to be treated here.
+
+      The state-of-the-art main campus at 5 Perryridge Road encompasses the Helmsley Medical Building and the Thomas and Olive C. Watson Pavilion. Located across the street from the hospital at 77 Lafayette Place, the Sherman and Gloria H. Cohen Pavilion houses the Smilow Cancer Hospital Greenwich Hospital Campus, home to the Bendheim Cancer Center and the Breast Center. Greenwich Hospital also has an Endoscopy Center and Physical Therapy at 500 W. Putnam Ave., the Greenwich Fertility Center, Helmsley Ambulatory Surgery Center, and the Center for Behavioral and Nutritional Health at 55 Holly Hill Lane, and the Yale New Haven Health’s Women’s Cardiovascular Center at 15 Valley Drive. The two Stamford locations include a facility for diagnostic imaging and physical therapy at 2015 W. Main St. and the Long Ridge Medical Center at 260 Long Ridge Road, a collaboration with Yale Medicine, Northeast Medical Group and Yale New Haven Hospital’s Center for Musculoskeletal Care. In Rye Brook, NY, a walk-in center sees patients during and after hours for a multitude of ailments. There are also primary care physicians and pediatricians seeing patients in the 90 South Ridge Road location, which has blood draw and x-ray. In addition, there are multiple satellite blood draw stations.
+
+      Search our locations
+      Patient Satisfaction and Service Excellence
+
+      Service excellence is a top priority at Greenwich Hospital. The hospital received the prestigious Summit Award from Press Ganey Associates for five consecutive years. The award recognizes facilities that maintain a patient satisfaction ranking in the 95th percentile or higher for three consecutive years. In addition, Greenwich Hospital has the prestigious Magnet designation from the American Nurses Credentialing Center, the nation’s highest honor for nursing excellence
+
+      Greenwich Hospital surpassed Connecticut, New York and national scores in the HCAHPS* patient surveys conducted by Centers for Medicare and Medicaid Services. Among all hospitals in Westchester County and Connecticut, patients gave Greenwich Hospital the highest rating in “willingness to recommend to others.”
+
+      * Hospital Consumer Assessment of Healthcare Providers and Systems</p>
+      <br>
+
+    </div>
+
+  </div>
+
+  <nav class="navbar navbar-default lastbar">
+
+
+                <iframe class=" google" style="padding-top:70px;padding-right:100px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.4632271880473!2d85.42591361461896!3d27.67207438280649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1aafec32df31%3A0xdda339e731af9bfd!2sBhaktapur+Durbar+Square!5e0!3m2!1sen!2snp!4v1544940013884" width="100%" height="950px" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                  <hr>
+                  <div class="container">
+
+            <h6 class="copyright"><span>Copyright © Doctor Hospital. Website Developed & Maintained By Sujan Bajracharya |  All Rights Reserved</span></h6>
+          </div>
+
+  </nav>
+
+
+
+
+  {% endblock %}
+  {% block title%}Doctor Hospital | Live Life Healthy{% endblock %}

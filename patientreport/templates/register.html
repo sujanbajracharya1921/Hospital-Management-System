@@ -1,0 +1,96 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+  <h2 class="text-center heading">Register Form</h2>
+</div>
+<div class="container-fluid body-section">
+  <div class="row">
+    <div class="col-md-2 dashboard3s">
+      <div class="list-group">
+        <a href="{% url 'profile' %}" class="list-group-item active">
+          <span class="badge"></span>
+          My Accounts
+        </a>
+        <a href="{% url 'register' %}" class="list-group-item">
+          Register Staff
+        </a>
+        <a href="{% url 'admin_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Admins
+        </a>
+        <a href="{% url 'doctor_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Doctors
+        </a>
+        <a href="{% url 'medical_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Medicals
+        </a>
+        <a href="{% url 'lab_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Laboratorists
+        </a>
+        <a href="{% url 'receptionist_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Receptionists
+        </a>
+        <a href="{% url 'patient_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Patients
+        </a>
+
+        <a href="#" class="list-group-item">
+          <span class="badge">12</span>
+          Appointments
+        </a>
+
+        <a href="{% url 'department' %}" class="list-group-item">
+					Department
+				</a>
+        {% if not request.user.is_superadmin %}
+
+				<a href="{% url 'updateadmin' %}" class="list-group-item">
+					Edit  Profile
+				</a>
+
+				<a href="{% url 'updateadmin_pass' %}" class="list-group-item">
+					Change Password
+				</a>
+				{% endif %}
+        <a href="{% url 'logout' %}" class="list-group-item">
+          Log Out
+        </a>
+      </div>
+    </div>
+    <!-- Page Heading -->
+    <div class='col-md-10'>
+      <div class="col-md-6 col-md-offset-2">
+
+        <div class="spacer-lg visible-sm visible-xs"></div>
+        <div class="box">
+
+          <form class="form-group"action="" method="POST" role="form">
+            {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+              <li class="{{ message.tags }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            {% csrf_token %}
+            {{form.as_p}}
+            <br>
+
+            <button type="submit" class="btn btn-success">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<br>
+<br>
+{% endblock %}

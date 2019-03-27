@@ -1,0 +1,21 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+
+
+<img src="{% static 'image/pathology_desc.jpg' %}" alt="..." width="100%" height="400px">
+
+<div class="container" style="margin-top:50px;margin-bottom:50px;">
+  <div class="thumbnail" style="padding-left:50px;padding-bottom:30px;">
+    <h2>Pathology</h2>
+    <p>The hospital boasts of well-equipped state-of-art labs for accurate diagnostics. The Pathology Lab adheres to the protocols lined by the NABL and ISO.</p>
+    <h4><b>Checkup-Days:Sunday-Friday</b></h4>
+    <h4><b>Checkup-Time:12:30-4:30</b></h4>
+  </div>
+  </div>
+
+
+  {% endblock %}
+  {% block title%}Doctor Hospital | Live Life Healthy{% endblock %}

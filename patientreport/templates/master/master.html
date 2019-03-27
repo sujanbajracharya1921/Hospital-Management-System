@@ -1,0 +1,135 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title> {% block title %}{% endblock %}</title>
+
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="main" role="main">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </div>
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js">
+  <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+  <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+  <script>
+
+
+  $("#medical_form").click(function(){
+    var matches = [];
+    $(".selection-box:checked").each(function(){
+        matches.push($(this).val());
+
+    });
+    // alert(matches);
+    // return false;
+
+    $.ajax({
+            url: createEvent,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            data:{
+                  medicines:$('#medicines').val(),
+                  amount:$('#amount').val(),
+                  csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                },
+                success:function(){
+                      alert("Created New User");
+
+                    }
+
+        });
+});
+
+//$("#department_doctor").click(function(){
+  //var matches = [];
+$("#id_department").on('change',function(e){
+
+ $.ajax({
+            url: '/createEvent2/',
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            data:{
+                  department:$(this).val(),
+csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                },
+                success:function(response){
+                  debugger
+                     //tespachi response ma doctor list aucha
+
+                   },
+                error:function(err){
+                  debugger
+                }
+
+            });
+        });
+
+//   submitHandler: function () {
+//     var matches = [];
+//     $(".selection-box:checked").each(function() {
+//         matches.push(this.value);
+//     });
+//     // var form = document.forms.namedItem("fileinfo");// This is the popup form that contains that file upload box and other fields
+//     var oData = new FormData(form);
+//     if (matches.length) {
+//         oData.append('action', matches);
+//     }
+//     $.ajax({
+//         url: url,
+//         processData: false,
+//         contentType: false,
+//         type: 'post',
+//         data: oData,
+//         success: function (data) {
+//             if (data.success == true) {
+//                 location.reload();
+//             }
+//         }
+//     });
+// }
+  // var myCheckboxes = new Array();
+  // $("input:checked").each(function() {
+  //     myCheckboxes.push($(this).val()); // changed this line
+  // });
+  // $(document).on('submit','#medical_form',function(e){
+  //   e.preventDefault();
+  //   $.ajax({
+  //     type:'POST',
+  //     url:'/createEvent/',
+  //     data:{
+  //       medicines:$('#medicines').val(),
+  //       amount:$('#amount').val(),
+  //       csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+  //     },
+  //     success:function(){
+  //       alert("Created New User");
+  //
+  //     }
+  //   });
+  //
+  // });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+  <h2 class="text-center heading">Update Password</h2>
+</div>
+<div class="container-fluid body-section">
+  <div class="row">
+    <div class="col-md-2 dashboard3s">
+      <div class="list-group">
+        <a href="{% url 'profile' %}" class="list-group-item active">
+          <span class="badge"></span>
+          My Accounts
+        </a>
+
+        <a href="{% url 'meds_check_pats_list' %}" class="list-group-item">
+          <span class="badge">12</span>
+          Patient's List
+        </a>
+
+        <a href="{% url 'updatemedical' %}" class="list-group-item">
+          Edit  Profile
+        </a>
+        <a href="{% url 'updatemedical_pass' %}" class="list-group-item">
+          Change Password
+        </a>
+        <a href="{% url 'logout' %}" class="list-group-item">
+          Log Out
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-offset-1">
+      <form method='POST' action="{% url 'updatemedical_pass' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+
+
+        <button type='submit' class="btn btn-primary">update</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  {% endblock %}
+  {% block title%}Change Password {% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'master\master.html' %}
+{% load widget_tweaks %}
+
+ {% block title %} Search For{% endblock %}
+ {% block content %}
+ <!-- Page Heading -->
+     <section class="page-heading">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <h1>Related Users</h1>
+           </div>
+         </div>
+       </div>
+     </section>
+     <!-- Page Heading / End -->
+
+     <!-- Page Content -->
+     <section class="page-content">
+       <div class="container">
+
+
+       </div>
+     </section>
+
+     <!-- Page Content / End -->
+
+     <div>
+       {% if messages %}
+       <ul class="messages">
+         {% for k in messages %}
+         <li style="color:red">{{k}}</li>
+         {% endfor %}
+       </ul>
+       {% endif %}
+     </div><br>
+
+     <div class="container"style="color:black">
+
+       {% if sr %}
+           {% for k in sr %}
+
+           <style>
+           table, th, td {
+             border: 1px solid black;
+             text-align:center;
+           }
+
+           </style>
+           <table style="width:100%">
+
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Is_active</th>
+              <th>Is_staff</th>
+              <th>Is_doctor</th>
+              <th>Is_admin</th>
+              <th>Is_lab</th>
+              <th>Is_receptionist</th>
+              <th>Is_cashier</th>
+              <th>Is_medical</th>
+              <th>Action</th>
+
+            </tr>
+
+
+            <tr>
+
+
+              <td>{{k.name}}</td>
+              <td>{{k.email}}</td>
+              <td>{{k.is_active}}</td>
+              <td>{{k.is_staff}}</td>
+              <td>{{k.is_doctor}}</td>
+              <td>{{k.is_admin}}</td>
+              <td>{{k.is_lab}}</td>
+              <td>{{k.is_receptionist}}</td>
+              <td>{{k.is_cashier}}</td>
+              <td>{{k.is_medical}}</td>
+              <td><i class="far fa-trash-alt delete" data-toggle="modal" data-target="#av{{k.id}}"></i></td>
+
+            </tr>
+       {% endfor %}
+       {% endif %}
+
+       {% for k in sr %}
+
+       <div class="modal fade" id="av{{k.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Delete User</h4>
+             </div>
+             <div class="modal-body">
+               <p>Are you sure want to delete?</p>
+             </div>
+             <div class="modal-footer">
+               <a href="{% url 'delete_users' k.id %}" class="btn btn-primary">Yes</a>
+               <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+             </div>
+           </div>
+         </div>
+       </div>
+       {% endfor %}
+     </table>
+
+
+     </div>
+
+
+
+
+{% endblock %}

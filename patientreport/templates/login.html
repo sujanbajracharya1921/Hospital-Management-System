@@ -1,0 +1,64 @@
+{% extends "master/master.html" %}
+{% load widget_tweaks %}
+{% block content %}
+ <!-- Page Heading -->
+ <body>
+
+     <section class="page-content">
+       <div class="container">
+
+         <div class="row">
+           <div align="center">
+
+
+             <div class="thumbnail loginstaff" align="justify">
+               <!-- {% if messages %}
+
+                          {% for message in messages %}
+                            <h6 class="{{ message.tags }}" style="text-align:center;">{{ message }}</h6>
+                          {% endfor %}
+
+               {% endif %} -->
+               <h2 style="text-align:center;padding-top:15px;">Account Login</h2>
+
+               <form action="" method="POST" role="form">
+
+               <br>
+               {% csrf_token %}
+               <div class="loginform">{{form}}
+
+
+                 <!-- {% for f in form %}
+                 <div class="form-group">
+                   <label>{{f.label_tag}}<span class="required">*</span></label>
+                   {{f|add_class:'form-control'}}
+                 </div>
+                 {{f.errors}}
+                 {% if f.help_text %}
+                     <small style="color: grey">{{ f.help_text }}</small>
+                   {% endif %}
+                 {% endfor %} -->
+                 <br>
+                 <button type="submit" class="btn btn-primary login-submit">Login</button>
+                 <br><br>
+                 <a  href="{% url 'password_reset' %}" id="hhh">Forget Password ?</a>
+                 </div>
+
+               </form>
+               <br>
+
+               <a href="{% url 'social:begin' 'github' %}" id="hhh" >Login with GitHub</a> |
+               <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+
+
+
+             </div>
+           </div>
+         </div>
+
+       </div>
+     </section>
+     <body>
+
+     {% endblock %}
+     <!-- Page Content / End -->

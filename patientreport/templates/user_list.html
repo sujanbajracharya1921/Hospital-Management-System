@@ -1,0 +1,63 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+  <div class="thumbnail"style=margin-top:30px;margin-left:20px;>
+<h1 style="text-align:center;"><b>Doctors</b></h1>
+</div>
+
+{% for user in users %}
+<!-- where each user is an objects of UserProfile model -->
+
+<div class=container>
+    <div class="thumbnail doc-paggination">
+      <div class=" pagination-doc-info">
+        {% if user.image %}
+        <img src="{{user.image.url}}" class="img-thumbnail" alt="" width="304"  align="left" HSPACE=”50” VSPACE=”50>
+
+        <div class="caption" style="padding-top:50px;">
+          Name:{{user.user.name}}
+          <br>
+          Email:{{user.user.email}}
+          <br>
+          Degree:{{user.degree}}
+          <br>
+          Specialist:{{user.specialist}}
+
+
+        </div>
+        <P align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        {% endif %}
+      </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+{% endfor %}
+</div>
+
+<div class="pagination" align="justify">
+<span class="step-links">
+{% if users.has_previous %}
+<a href="?page={{ users.previous_page_number }}">Previous</a>
+{% endif %}
+
+<!-- Showing the page numbers in Html Page -->
+<span class="current">
+Page {{ users.number }} of {{ users.paginator.num_pages }}.
+</span>
+
+{% if users.has_next %}
+<a href="?page={{ users.next_page_number }}">Next</a>
+{% endif %}
+</span>
+</div>
+{% endblock %}

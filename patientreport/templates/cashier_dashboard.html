@@ -1,0 +1,64 @@
+
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+	<h2 class="text-center heading">Cashier Dashboard</h2>
+</div>
+<div class="container-fluid body-section">
+    <div class="row">
+        <div class="col-md-2 dashboard3s">
+           	<div class="list-group">
+              	<a href="" class="list-group-item active">
+                	<span class="badge"></span>
+                	My Accounts
+              	</a>
+
+              	<a href="{% url 'patient_list' %}" class="list-group-item">
+                	<span class="badge">12</span>
+                	Patients
+              	</a>
+
+              	<a href="{% url 'updatelab_pass' %}" class="list-group-item">
+                	Edit Password
+              	</a>
+              	<a href="{% url 'updatelab' %}" class="list-group-item">
+                	Edit Profile
+              	</a>
+              	<a href="{% url 'logout' %}" class="list-group-item">
+                	Log Out
+              	</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+					<div class="row">
+           <div class="col-md-8 h1"<h1>Dashboard </h1></div>
+					 <div class=" col-md-4 input-group">
+						<form action="{% url 'lab_patient_search' %}" method="POST" role="form">
+							 {% csrf_token %}
+										<div class="form-group admi" >
+											<input type="text" name="srh" class="form-control"  placeholder="Search For">
+											<!-- #value="{{request.GET.srh}}" -->
+										</div>
+										<!-- <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-search"></i></button> -->
+										<span class="input-group-btn butt">
+								 			<button class="btn btn-default" type="search">Go!</button>
+								 		</span>
+
+							</form>
+				 	</div>
+
+
+
+					</div>
+					 <hr>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

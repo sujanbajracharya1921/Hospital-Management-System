@@ -1,0 +1,39 @@
+
+
+
+
+<div style="background-color:#ccc;margin-top:10px;padding-top:10px; padding-bottom:20px;padding-left:5px;padding-right:5px;text-align:center;">
+<h1>cashier's List</h1></div>
+<br>
+<style>
+table, th, td {
+  border: 1px solid black;
+  text-align:center;
+}
+
+</style>
+<table style="width:100%">
+
+ <tr>
+   <th>Name</th>
+   <th>Email</th>
+   <th>Address</th>
+   <th>Age</th>
+   <th>Sex</th>
+   <th>Contact</th>
+
+ </tr>
+
+ {% for x,y in ab %}
+
+ <tr>
+   <td>{{x.name}}</td>
+   <td>{{x.email}}</td>
+   <td>{{x.address}}</td>
+   <td>{{x.age}}</td>
+   <td>{{x.sex}}</td>
+   <td>{{x.contact}}</td>
+
+ </tr>
+ {% endfor %}
+</table>

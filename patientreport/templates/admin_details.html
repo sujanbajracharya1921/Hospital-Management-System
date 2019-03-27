@@ -1,0 +1,30 @@
+{% extends 'master/master.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="rectangle">
+	<h2 class="text-center heading">Admin Details</h2>
+</div>
+<div align="center">
+<div class="thumbnail admin_details" align="center">
+	<br>
+{% if details.image %}
+<img src="{{details.image.url}}" class="img-thumbnail" alt="" width="304" height="200">
+{% endif %}
+<ul>
+<li>Name:{{details.user.name}}</li>
+<li>Email:{{details.user.email}}</li>
+<li>Address:{{details.address}}</li>
+<li>Age:{{details.age}}</li>
+<li>Sex:{{details.sex}}</li>
+<li>Join-Date:{{details.user.join_date}}</li>
+</ul>
+<style>
+  ul{
+    list-style:none;
+  }
+
+</style>
+
+</div>
+</div>
+{% endblock %}
