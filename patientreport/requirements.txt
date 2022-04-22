@@ -17,7 +17,7 @@ project==20
 pyasn1==0.4.5
 pyasn1-modules==0.2.4
 PyJWT==1.7.1
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 python-dateutil==2.8.0
 python-social-auth==0.2.1
 python3-openid==3.1.0
